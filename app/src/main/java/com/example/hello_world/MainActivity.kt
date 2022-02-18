@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         val userInput: EditText = findViewById<EditText>(R.id.editTextTextPersonName2)
         val button: Button = findViewById<Button>(R.id.button)
+        val clearbutton: Button = findViewById<Button>(R.id.eraseButton)
         textView = findViewById<TextView>(R.id.textView2)
 
         textView?.text = ""
@@ -35,6 +36,12 @@ class MainActivity : AppCompatActivity() {
                 textView?.append(userInput.text)
                 textView?.append("\n")
                 userInput.setText("")
+            }
+        })
+
+        clearbutton.setOnClickListener(object: View.OnClickListener {
+            override fun onClick(p0: View?) {
+                textView?.text = ""
             }
         })
     }
